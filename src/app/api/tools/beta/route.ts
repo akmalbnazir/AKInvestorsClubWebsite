@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { NextRequest, NextResponse } from "next/server";
 import { fetchDaily, returns, beta } from "lib/finance";
 export async function GET(req: NextRequest){

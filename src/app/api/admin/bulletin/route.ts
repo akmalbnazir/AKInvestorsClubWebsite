@@ -1,6 +1,9 @@
+export const dynamic = "force-dynamic";
+
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "lib/db";
 import { requireAdmin } from "lib/auth";
+
 
 export async function GET() {
   const items = await prisma.bulletin.findMany({ orderBy: { createdAt: "desc" } });
