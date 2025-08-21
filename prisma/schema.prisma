@@ -1,0 +1,95 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String         @id @default(cuid())
+  email        String         @unique
+  name         String?
+  role         String         @default("MEMBER") // instead of Role enum
+  approved     Boolean        @default(false)
+  passwordHash String
+  createdAt    DateTime       @default(now())
+  sessions     Session[]
+  progress     UserProgress[]
+  awards       Award[]
+  posts        Post[]
+  comments     Comment[]
+  Bulletin     Bulletin[]
+}
+
+model UserProgress {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  level     String   @default("BEGINNER") // instead of Level enum
+  createdAt DateTime @default(now())
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
+  expiresAt DateTime
+}
+
+model Award {
+  id        String   @id @default(cuid())
+  name      String
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
+}
+
+model Post {
+  id        String    @id @default(cuid())
+  title     String
+  content   String
+  authorId  String
+  author    User      @relation(fields: [authorId], references: [id])
+  comments  Comment[]
+  createdAt DateTime  @default(now())
+}
+
+model Comment {
+  id        String   @id @default(cuid())
+  content   String
+  postId    String
+  post      Post     @relation(fields: [postId], references: [id])
+  authorId  String
+  author    User     @relation(fields: [authorId], references: [id])
+  createdAt DateTime @default(now())
+}
+
+model JoinRequest {
+  id        String   @id @default(cuid())
+  name      String
+  email     String   @unique
+  grade     String?
+  interest  String?
+  status    String   @default("pending")
+  createdAt DateTime @default(now())
+}
+
+model Bulletin {
+  id        String   @id @default(cuid())
+  message   String
+  authorId  String?
+  author    User?    @relation(fields: [authorId], references: [id])
+  createdAt DateTime @default(now())
+}
+
+model Event {
+  id        String   @id @default(cuid())
+  title     String
+  date      DateTime
+  location  String
+  details   String
+  createdAt DateTime @default(now())
+}
