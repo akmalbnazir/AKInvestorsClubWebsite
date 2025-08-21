@@ -22,7 +22,7 @@ export default function AboutPage() {
             <h3 className="text-xl font-bold">Yin Ho — President</h3>
             <p className="text-ak-sub mt-2">
               Yin is a rising Junior and the driving force behind AKIC. As a passionate 
-              investor and aspiring investment banker, he thrives on everything from 
+              investor, he thrives on everything from 
               risk management to market analysis. His goal is to ensure every member 
               feels welcomed and leaves with meaningful insight into the world of finance.
             </p>
