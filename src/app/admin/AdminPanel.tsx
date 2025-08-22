@@ -68,24 +68,81 @@ function AdminEvents() {
 }
 
 function AdminApprovals() {
-  const { data, mutate } = useSWR("/api/admin/join-requests", (u)=>fetch(u).then(r=>r.json()));
-  const approve = async (id:string)=>{
-    const r = await fetch(`/api/admin/join-requests/${id}/approve`, { method:"POST" });
+  const fetcher = (u: string) => fetch(u).then((r) => r.json());
+  const { data, mutate } = useSWR("/api/admin/join-requests", fetcher);
+
+  const approve = async (id: string) => {
+    const r = await fetch(`/api/admin/join-requests/${id}/approve`, { method: "POST" });
+    if (!r.ok) {
+      const err = await r.text();
+      alert(`Approve failed: ${err}`);
+      return;
+    }
     const js = await r.json();
     alert(`Approved ${js.email}. Temp password: ${js.tempPassword}`);
+    try { await navigator.clipboard.writeText(js.tempPassword); } catch {}
     mutate();
   };
+
+  const reset = async (email: string) => {
+    const r = await fetch("/api/admin/users/reset-password", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email }), // server generates a new temp password
+    });
+    if (!r.ok) {
+      const err = await r.text();
+      alert(`Reset failed: ${err}`);
+      return;
+    }
+    const js = await r.json();
+    alert(`Reset for ${js.email}. New temp password: ${js.tempPassword}`);
+    try { await navigator.clipboard.writeText(js.tempPassword); } catch {}
+  };
+
   return (
     <UltraCard>
       <div className="text-xl font-semibold mb-2">Join Requests</div>
       <div className="space-y-2">
-        {(data||[]).map((jr:any)=> (
+        {(data || []).map((jr: any) => (
           <div key={jr.id} className="flex items-center gap-3">
-            <div className="flex-1">{jr.name} &lt;{jr.email}&gt; — {jr.status}</div>
-            {jr.status==="pending" && <button onClick={()=>approve(jr.id)} className="px-3 py-1 rounded-lg bg-ak-neon text-black">Approve</button>}
+            <div className="flex-1">
+              {jr.name} &lt;{jr.email}&gt; —{" "}
+              <span
+                className={`px-2 py-0.5 rounded text-sm ${
+                  jr.status === "approved"
+                    ? "bg-green-500/20 text-green-300"
+                    : jr.status === "pending"
+                    ? "bg-yellow-500/20 text-yellow-300"
+                    : "bg-white/10 text-white/80"
+                }`}
+              >
+                {jr.status}
+              </span>
+            </div>
+
+            {jr.status === "pending" && (
+              <button
+                onClick={() => approve(jr.id)}
+                className="px-3 py-1 rounded-lg bg-ak-neon text-black"
+              >
+                Approve
+              </button>
+            )}
+
+            {jr.status === "approved" && (
+              <button
+                onClick={() => reset(jr.email)}
+                className="px-3 py-1 rounded-lg bg-black/60 border border-white/10 hover:bg-black/70"
+                title="Generate a new temporary password and copy it"
+              >
+                Reset Password
+              </button>
+            )}
           </div>
         ))}
       </div>
     </UltraCard>
   );
 }
+

@@ -3,9 +3,9 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")      // pooled, used at runtime
-  directUrl = env("DIRECT_DATABASE_URL") // non-pooled, used for migrations
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")         // pooled (6543) → runtime on Vercel
+  directUrl = env("DIRECT_DATABASE_URL")  // non-pooled (5432) → migrations & seeding
 }
 
 model User {

@@ -22,6 +22,9 @@
       ],
       "store/*": [
         "store/*"
+      ],
+      "@/*": [
+        "src/*"
       ]
     },
     "allowJs": true,
