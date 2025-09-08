@@ -29,7 +29,6 @@ export default function MorphDock({ session }: { session: Sess }) {
   // Build items list
   const items = [...BASE];
   if (session) {
-    items.push({ label: "Learn", href: "/learn" });
     items.push({ label: "Forum", href: "/forum" });
     items.push({ label: "Simulator", href: "/simulator" });
     items.push({ label: "Course", href: "/course" });
