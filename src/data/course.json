@@ -1,0 +1,392 @@
+{
+  "title": "AKIC Investment Fundamentals \u2014 Full Semester",
+  "modules": [
+    {
+      "title": "Foundations of Markets",
+      "lessons": [
+        {
+          "title": "What is Investing?",
+          "content": "Investing allocates capital today for expected future return. Contrast investing vs. speculation; real vs. financial assets; nominal vs. real returns; time value of money basics."
+        },
+        {
+          "title": "Compounding & Time Value",
+          "content": "Future Value, Present Value, discount rates; rule of 72; continuous compounding; inflation-adjusted returns."
+        },
+        {
+          "title": "Risk & Return",
+          "content": "Volatility, drawdowns, Sharpe ratio, diversification; systematic vs. idiosyncratic risk; risk premium."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Which best describes systematic risk?",
+          "a": [
+            "Risk that can be diversified away",
+            "Risk inherent to the entire market",
+            "Accounting fraud risk",
+            "Currency conversion error"
+          ],
+          "correct": 1
+        },
+        {
+          "q": "If inflation is 3% and nominal return is 8%, real return is approximately:",
+          "a": [
+            "5%",
+            "11%",
+            "-5%",
+            "3%"
+          ],
+          "correct": 0
+        }
+      ]
+    },
+    {
+      "title": "Securities 101",
+      "lessons": [
+        {
+          "title": "Stocks",
+          "content": "Common vs preferred, dividends, EPS, P/E, market cap styles (large/small), sectors, indices."
+        },
+        {
+          "title": "Bonds",
+          "content": "Coupons, yields, duration/convexity, credit risk, yield curve, pricing."
+        },
+        {
+          "title": "Funds",
+          "content": "Mutual funds vs ETFs, AUM, expense ratio, tracking error."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Bond price and yield have:",
+          "a": [
+            "Positive relationship",
+            "No relationship",
+            "Inverse relationship",
+            "Only true for zero-coupon bonds"
+          ],
+          "correct": 2
+        }
+      ]
+    },
+    {
+      "title": "Market Mechanics",
+      "lessons": [
+        {
+          "title": "Exchanges & Orders",
+          "content": "Market, limit, stop, stop-limit; bid/ask spread; liquidity; order routing; T+2 settlement."
+        },
+        {
+          "title": "Short Selling & Margin",
+          "content": "Borrowing shares, collateral, margin calls, maintenance margin; risks."
+        },
+        {
+          "title": "Taxes & Accounts",
+          "content": "Taxable vs tax-advantaged accounts, wash sale, capital gains (short vs long)."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "A limit buy at $100 will execute:",
+          "a": [
+            "At any price",
+            "Only if price \u2265 $100",
+            "Only if price \u2264 $100",
+            "Never"
+          ],
+          "correct": 2
+        }
+      ]
+    },
+    {
+      "title": "Financial Statements",
+      "lessons": [
+        {
+          "title": "Income Statement",
+          "content": "Revenue to Net Income; margins; EPS."
+        },
+        {
+          "title": "Balance Sheet",
+          "content": "Assets, Liabilities, Equity = A\u2212L."
+        },
+        {
+          "title": "Cash Flow",
+          "content": "Operating, Investing, Financing; free cash flow."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Which statement best captures cash generation from operations?",
+          "a": [
+            "Income Statement",
+            "Balance Sheet",
+            "Cash Flow Statement",
+            "Statement of Shareholders' Equity"
+          ],
+          "correct": 2
+        }
+      ]
+    },
+    {
+      "title": "Valuation Basics",
+      "lessons": [
+        {
+          "title": "Multiples",
+          "content": "P/E, EV/EBITDA, P/S, P/B; relative valuation caveats."
+        },
+        {
+          "title": "DCF",
+          "content": "Forecast FCF, WACC, terminal value models (Gordon, exit multiple)."
+        },
+        {
+          "title": "Comparables",
+          "content": "Peer selection, normalizing metrics, market narratives."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Gordon Growth terminal value equals FCF1/(WACC\u2212g). If WACC=10% and g=3%, FCF1=$10, TV?",
+          "a": [
+            "$100",
+            "$143",
+            "$70",
+            "$333"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "title": "Portfolio Theory",
+      "lessons": [
+        {
+          "title": "Diversification",
+          "content": "Correlation, covariance; efficient frontier; risk vs return tradeoff."
+        },
+        {
+          "title": "CAPM & Beta",
+          "content": "Expected return = Rf + beta(Mkt\u2212Rf); interpreting beta; alpha."
+        },
+        {
+          "title": "Asset Allocation",
+          "content": "Core/satellite; rebalancing; glide paths."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Lower correlation between assets generally:",
+          "a": [
+            "Increases portfolio risk",
+            "Reduces diversification benefit",
+            "Improves risk-adjusted return potential",
+            "Has no effect"
+          ],
+          "correct": 2
+        }
+      ]
+    },
+    {
+      "title": "Derivatives Intro",
+      "lessons": [
+        {
+          "title": "Options",
+          "content": "Calls & puts, intrinsic vs time value, Greeks (delta, gamma, theta, vega)."
+        },
+        {
+          "title": "Futures",
+          "content": "Hedging vs speculation; margin; basis."
+        },
+        {
+          "title": "Risks",
+          "content": "Leverage, assignment, volatility crush."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "A call option gains value primarily when:",
+          "a": [
+            "Underlying price falls",
+            "Volatility falls",
+            "Time passes",
+            "Underlying price rises"
+          ],
+          "correct": 3
+        }
+      ]
+    },
+    {
+      "title": "Fixed Income Deep Dive",
+      "lessons": [
+        {
+          "title": "Yield Curve & Duration",
+          "content": "Parallel vs non-parallel shifts; duration immunization."
+        },
+        {
+          "title": "Credit",
+          "content": "Spreads, ratings, default risk; HY vs IG."
+        },
+        {
+          "title": "Inflation & TIPS",
+          "content": "Real yields, breakevens."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Duration approximates:",
+          "a": [
+            "Price sensitivity to interest rates",
+            "Company leverage",
+            "Credit risk",
+            "Dividend payout stability"
+          ],
+          "correct": 0
+        }
+      ]
+    },
+    {
+      "title": "Behavioral Finance",
+      "lessons": [
+        {
+          "title": "Biases",
+          "content": "Overconfidence, loss aversion, anchoring, herding."
+        },
+        {
+          "title": "Market Anomalies",
+          "content": "Momentum, value, size; limits to arbitrage."
+        },
+        {
+          "title": "Investor Policy Statement",
+          "content": "Goals, constraints, risk tolerance."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Loss aversion implies investors:",
+          "a": [
+            "Weigh losses more than gains",
+            "Are indifferent to outcomes",
+            "Always choose risk-free assets",
+            "Prefer lottery-like payoffs"
+          ],
+          "correct": 0
+        }
+      ]
+    },
+    {
+      "title": "Strategies & Backtesting",
+      "lessons": [
+        {
+          "title": "Trend Following",
+          "content": "SMA crossovers, breakout systems."
+        },
+        {
+          "title": "Mean Reversion",
+          "content": "Pairs trading, RSI."
+        },
+        {
+          "title": "Factor Investing",
+          "content": "Value, quality, momentum, low-vol; pitfalls."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "A 50/200 SMA golden cross is typically considered:",
+          "a": [
+            "Bearish",
+            "Bullish",
+            "Neutral",
+            "Only works on bonds"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "title": "Risk Management",
+      "lessons": [
+        {
+          "title": "Position Sizing",
+          "content": "Kelly, volatility targeting, fixed fractional."
+        },
+        {
+          "title": "Stops & Drawdown",
+          "content": "Hard stops, ATR-based stops, risk limits."
+        },
+        {
+          "title": "Stress & Scenario",
+          "content": "What-ifs, regime changes."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Volatility targeting adjusts:",
+          "a": [
+            "Expected return",
+            "Position size to keep risk constant",
+            "Time horizon",
+            "Diversification level"
+          ],
+          "correct": 1
+        }
+      ]
+    },
+    {
+      "title": "Ethics & Regulation",
+      "lessons": [
+        {
+          "title": "Regulatory Bodies",
+          "content": "SEC, FINRA; fiduciary vs suitability."
+        },
+        {
+          "title": "Insider Trading",
+          "content": "MNPI rules; Chinese walls."
+        },
+        {
+          "title": "Compliance Culture",
+          "content": "Record-keeping, conflicts of interest."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Trading on material nonpublic information is:",
+          "a": [
+            "Legal if small",
+            "Legal if for education",
+            "Illegal",
+            "Only illegal for CEOs"
+          ],
+          "correct": 2
+        }
+      ]
+    },
+    {
+      "title": "Capstone",
+      "lessons": [
+        {
+          "title": "Portfolio Project",
+          "content": "Build a diversified paper portfolio; document thesis, risks, metrics; track vs benchmark."
+        },
+        {
+          "title": "Presentation",
+          "content": "Create a 5-minute deck; results, lessons, improvements."
+        },
+        {
+          "title": "Peer Review",
+          "content": "Give/receive feedback."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "A clear investment thesis should include:",
+          "a": [
+            "Only a price target",
+            "Catalysts and risks",
+            "Memes",
+            "None of the above"
+          ],
+          "correct": 1
+        }
+      ]
+    }
+  ]
+}
